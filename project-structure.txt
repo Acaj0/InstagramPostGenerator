@@ -1,0 +1,53 @@
+instagram-post-generator/
+├── app/
+│   ├── api/
+│   │   ├── admin/
+│   │   │   ├── users.ts
+│   │   │   └── subscriptions.ts
+│   │   ├── auth/
+│   │   │   └── [...nextauth].ts
+│   │   ├── generate-post.ts
+│   │   ├── generate-image.ts
+│   │   ├── payment.ts
+│   │   ├── send-whatsapp.ts
+│   │   └── analytics.ts
+│   ├── admin/
+│   │   └── page.tsx
+│   ├── dashboard/
+│   │   └── page.tsx
+│   ├── login/
+│   │   └── page.tsx
+│   ├── plans/
+│   │   └── page.tsx
+│   ├── profile/
+│   │   └── page.tsx
+│   ├── register/
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── AdminPanel.tsx
+│   ├── AnalyticsChart.tsx
+│   ├── Calendar.tsx
+│   ├── DragDropCalendar.tsx
+│   ├── ImageGenerator.tsx
+│   ├── LandingPage.tsx
+│   ├── LoginForm.tsx
+│   ├── Navbar.tsx
+│   ├── PaymentForm.tsx
+│   ├── PostCard.tsx
+│   ├── PostGenerator.tsx
+│   ├── ProfileForm.tsx
+│   └── RegisterForm.tsx
+├── lib/
+│   ├── auth.ts
+│   ├── db.ts
+│   ├── openai.ts
+│   └── canva.ts
+├── types/
+│   └── index.ts
+├── .env.local
+├── next.config.js
+├── package.json
+└── tsconfig.json
+
