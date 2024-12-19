@@ -1,5 +1,4 @@
-'use client'
-import NextAuth from "next-auth"
+import NextAuth, { NextAuthOptions, User } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
@@ -7,7 +6,7 @@ import bcrypt from "bcryptjs"
 
 const prisma = new PrismaClient()
 
-export default NextAuth({
+const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
@@ -16,7 +15,7 @@ export default NextAuth({
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials) {
+      async authorize(credentials): Promise<User | null> {
         if (!credentials?.email || !credentials?.password) {
           return null
         }
@@ -41,15 +40,36 @@ export default NextAuth({
           id: user.id,
           email: user.email,
           name: user.name,
+          role: user.role,
         }
       }
     })
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id
+        token.role = user.role
+      }
+      return token
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.id as string
+        session.user.role = token.role as string
+      }
+      return session
+    }
+  },
   session: {
     strategy: "jwt"
   },
   pages: {
     signIn: "/login",
   },
-})
+}
+
+const handler = NextAuth(authOptions)
+
+export { handler as GET, handler as POST }
 
