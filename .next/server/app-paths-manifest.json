@@ -1,11 +1,4 @@
 {
-  "/not-found": "app/not-found.js",
-  "/register/page": "app/register/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/api/analytics": "app/api/analytics.js",
-  "/api/generate-post": "app/api/generate-post.js",
-  "/page": "app/page.js",
-  "/login/page": "app/login/page.js"
+  "/admin/page": "app/admin/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
 }
