@@ -1,4 +1,4 @@
-// File: C:\Users\antonio.abreu\Documents\InstagramPostGenerator\app\layout.tsx
+// File: C:\Users\anton\InstagramPostGenerator\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

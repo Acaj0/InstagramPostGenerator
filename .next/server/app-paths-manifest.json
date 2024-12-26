@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
   "/register/page": "app/register/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+=======
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js"
+>>>>>>> 132dcfd97dfa28eab2dfd477cf5eb90aee39648d
 }
