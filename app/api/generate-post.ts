@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import openai from "@/lib/openai"
 import prisma from "@/lib/db"
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "./auth/[...nextauth]"
+import { authOptions } from "./auth/[...nextauth]/route"
 
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions)

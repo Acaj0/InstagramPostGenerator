@@ -6,13 +6,6 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-100 to-pink-100">
       <header className="container mx-auto px-4 py-8">
-        <nav className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-purple-800">InstaPost Gen</h1>
-          <div className="space-x-4">
-            <Link href="/login" className="text-purple-800 hover:text-purple-600">Login</Link>
-            <Link href="/register" className="text-purple-800 hover:text-purple-600">Register</Link>
-          </div>
-        </nav>
       </header>
 
       <main className="container mx-auto px-4 py-16">
@@ -56,11 +49,6 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="bg-purple-900 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2023 InstaPost Gen. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   )
 }

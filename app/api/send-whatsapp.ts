@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import twilio from "twilio"
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "./auth/[...nextauth]"
+import { authOptions } from "./auth/[...nextauth]/route"
 
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 

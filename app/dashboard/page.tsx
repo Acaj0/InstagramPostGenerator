@@ -2,10 +2,10 @@
 
 import { useSession } from "next-auth/react"
 import { useState } from "react"
-import DragDropCalendar from "@/components/DragDropCalendar"
 import PostGenerator from "@/components/PostGenerator"
 import ImageGenerator from "@/components/ImageGenerator"
 import AnalyticsChart from "@/components/AnalyticsChart"
+import PostCalendar from "@/components/Calendar"
 
 export default function Dashboard() {
   const { data: session } = useSession()
@@ -32,7 +32,7 @@ export default function Dashboard() {
 
       <div>
         <h2 className="text-2xl font-bold mb-4">Post Calendar</h2>
-        <DragDropCalendar />
+        <PostCalendar />
       </div>
 
       <div>

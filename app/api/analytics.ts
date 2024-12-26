@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import prisma from "@/lib/db"
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "./auth/[...nextauth]"
+import { authOptions } from "./auth/[...nextauth]/route"
 
 export async function GET(req: Request) {
   const session = await getServerSession(authOptions)

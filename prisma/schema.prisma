@@ -8,11 +8,36 @@ datasource db {
 }
 
 model User {
+  id            String         @id @default(cuid())
+  name          String?
+  email         String         @unique
+  password      String
+  role          String         @default("user")
+  plan          String         @default("free")
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
+  posts         Post[]
+}
+
+model Subscription {
   id        String   @id @default(cuid())
-  name      String?
-  email     String   @unique
-  password  String
-  role      String   @default("user")
+  userId    String
+  plan      String
+  status    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
 }
+
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  scheduledAt DateTime?
+  userId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id])
+}
+

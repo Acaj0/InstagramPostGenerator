@@ -1,6 +1,4 @@
-import './globals.css'
 import { Inter } from 'next/font/google'
-import { SessionProvider } from "next-auth/react"
 import Navbar from '../components/Navbar'
 import Providers from '@/components/Providers'
 
